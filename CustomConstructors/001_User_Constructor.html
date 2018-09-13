@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Пользовательский Конструктор</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+
+            // Функция-конструктор для создания объектов Point.
+            function Point(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+
+            // Создание трех экземпляров класса Point
+            var leftTop = new Point(0, 0);
+            var topRight = new Point(15, 30);
+            var rightBottom = new Point(30, 30);
+
+            // Вывод координат созданых точек
+            document.write('Координаты нашего треугольника: <br><hr>');
+            document.write('Координаты первой точки: ' + leftTop.x + ', ' + leftTop.y + '<br>');
+            document.write('Координаты второй точки: ' + topRight.x + ', ' + topRight.y + '<br>');
+            document.write('Координаты третей точки: ' + rightBottom.x + ', ' + rightBottom.y + '<br>');
+
+        </script>
+    </body>
+</html>
