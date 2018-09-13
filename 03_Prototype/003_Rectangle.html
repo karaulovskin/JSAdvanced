@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Прототип</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+
+            function Rectangle(w, h) {
+                // свойства
+                this.width = w;
+                this.height = h;
+            }
+
+            Rectangle.prototype.getArea = function () {
+                return this.width * this.height;
+            }
+
+            // Свойство прототипа, будет доступно всем экземплярам
+            Rectangle.prototype.name = "RECTANGLE";
+
+            var rect1 = new Rectangle(100, 5);
+            var rect2 = new Rectangle(30, 150);
+
+            document.write("Площадь прямоугольника 1: " + rect1.getArea() + "<br>");
+            document.write("Площадь прямоугольника 2: " + rect2.getArea() + "<br><br>");
+
+            document.write("Площадь прямоугольника 1: " + rect1.name + "<br>");
+            document.write("Площадь прямоугольника 2: " + rect2.name + "<br><br>");
+
+            // меняем свойство "name" у прямоугольника 1
+            rect1.name = "first rectangle";
+
+            document.write("После смены имени объекта rect1 <br>");
+            document.write("Площадь прямоугольника 1: " + rect1.name + "<br>");
+            document.write("Площадь прямоугольника 2: " + rect2.name + "<br><br>");
+
+            console.log(rect1);
+            console.log(rect2);
+
+            // меняем свойство "name" у прототипа
+            Rectangle.prototype.name = "new name";
+
+            document.write("После смены имени у прототипа <br>");
+            document.write("Площадь прямоугольника 1: " + rect1.name + "<br>");
+            document.write("Площадь прямоугольника 2: " + rect2.name + "<br>");
+
+            console.log(rect1);
+            console.log(rect2);
+
+        </script>
+    </body>
+</html>
