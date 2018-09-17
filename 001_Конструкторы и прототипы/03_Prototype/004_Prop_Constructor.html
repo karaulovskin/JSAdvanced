@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Свойство constructor</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+
+            // Создаем несколько объектов используя различные конструкторы
+            var MyArray = new Array;
+            var MyDate = new Date;
+            var MyString = new String("Some string value");
+            var MyObj = new Object();
+            var MyFunc = new Function("x", "y", "return x + y;" );
+
+            var MyCtor = function (x, y) {
+                this.x = x;
+                this.y = y;
+            };
+
+            var MyCtorObject = new MyCtor(12, 3);
+
+            // Создаем функцию для вывода содержимого свойства constructor аргумента
+
+            function showCtor(obj, name) {
+                document.write("Конструктор объекта " + name + " это " + obj.constructor + "<br>");
+            }
+
+            document.write("========================= Значения конструкторов =========================<br>");
+            showCtor(MyArray, "MyArray");
+            showCtor(MyDate, "MyDate");
+            showCtor(MyString, "MyString");
+            showCtor(MyObj, "MyObj");
+            showCtor(MyFunc, "MyFunc");
+            showCtor(MyCtorObject, "MyCtorObject");
+            document.write("==============================================================================<br>");
+
+            //Вызываем конструктор с помощью которого был создан объект MyDate
+            var someNewObject = new MyDate.constructor();
+
+            document.write("Знчение объекта someNewObject:" + someNewObject);
+
+        </script>
+    </body>
+</html>

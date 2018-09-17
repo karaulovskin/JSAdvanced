@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Наследование</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+
+            // базовая функция конструктор
+            function Human(name) {
+                this.name = name;
+                this.talk = function() {
+                    document.write("Hello My Name is " + this.name + "<br>");
+                }
+            }
+
+            // производная фукция конструктор
+            function Student(name) {
+                this.name = name;
+                this.school = "CBS School";
+            }
+
+            function Worker(name) {
+                this.name = name;
+                this.speciality = "Software developer";
+
+                //переопредиление метода из базовой функции структора (override).
+                this.talk = function() {
+                    document.write("Привет меня зовут " + this.name + "<br>");
+                }
+            }
+
+            // Создаем экземпляр родителя
+            var human = new Human;
+
+            // наследуем Student и Worker от Human устанавливая функцию как прототип.
+            Student.prototype = human;
+            Worker.prototype = human;
+
+            var Alex = new Student("Alexsander");
+            var Andrew = new Worker("Andrew");
+
+            document.write("<br> Student <br>");
+            Alex.talk();
+            document.write(Alex.school);
+
+            document.write("<br><br> Worker <br>");
+            Andrew.talk();
+            document.write(Andrew.speciality);
+
+        </script>
+    </body>
+</html>
