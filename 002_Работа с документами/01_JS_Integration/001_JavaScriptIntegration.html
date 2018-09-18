@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Встраивание JS кода в HTML траницу</title>
+
+        <!-- В теге script в head страницы -->
+        <script type="text/javascript">
+            // JS код
+        </script>
+
+        <!-- Из внешнего файла -->
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <!-- В качестве обработчика события через HTML атрибут -->
+        <input type="button" value="Кнопка" onclick="alert('Клик по кнопке')">
+        <br>
+        <br>
+
+        <!-- Как тело URL адсса -->
+        <a href="javascript:alert('Клик по ссылки')">Ссылка</a>
+
+        <!-- В теге script в body страницы -->
+        <script type="text/javascript">
+            // JS код
+        </script>
+
+        <!-- Из внешнего файла -->
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
