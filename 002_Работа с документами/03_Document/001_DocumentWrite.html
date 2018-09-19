@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Методы write() и writeln() объекта document</title>
+
+        <script type="text/javascript">
+            function ButtonHandler() {
+                document.write("Hello world");
+            }
+        </script>
+    </head>
+    <body>
+        <p>
+            <script type="text/javascript">
+                document.write("hllo");
+                document.write("1", "-", "2", "-", "3");
+            </script>
+        </p>
+
+        <p>
+            <script type="text/javascript">
+                document.writeln("hello");
+                document.writeln("1", "-", "2", "-", "3");
+            </script>
+        </p>
+
+        <pre>
+            <script type="text/javascript">
+                document.writeln("hello");
+                document.writeln("1", "-", "2", "-", "3");
+            </script>
+        </pre>
+
+        <input type="button" value="Кнопка" onclick="ButtonHandler()">
+    </body>
+</html>

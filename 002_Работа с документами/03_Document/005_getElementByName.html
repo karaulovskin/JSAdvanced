@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getElementByName</title>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+            document.getElementById("answerButton").onclick = function () {
+                // получение массива элементов с атрибутом name с значением answer
+                var radioButton = document.getElementsByName("answer");
+                var res = "";
+
+                for (var i = 0; i < radioButton.length; i++) {
+                    res += radioButton[i].value + " " + radioButton[i].checked + "\r\n";
+                }
+                alert(res);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <span>Да</span><input type="radio" name="answer" value="Да">
+    <span>Нет</span><input type="radio" name="answer" value="Нет">
+    <span>Не знаю</span><input type="radio" name="answer" value="Не знаю">
+
+    <input id="answerButton" type="button" value="Получить ответ">
+</body>
+</html>

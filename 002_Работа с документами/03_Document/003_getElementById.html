@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getElementById</title>
+</head>
+<body>
+    <p id="output">Hello world</p>
+    <a id="link" href="ya.ru">Yandex.ru</a>
+
+    <script type="text/javascript">
+
+        // скрипт должен распологаться после элементов HTML, которые используются в этом скрипте.
+        // получение элементов со страницы по значению атрибута id
+        var paragraph = document.getElementById("output");
+        var hyperlink = document.getElementById("link");
+
+        // innerHTML - текст между открывающим и закрывающим тегом
+        paragraph.innerHTML = "HELLO WORLD";
+        hyperlink.innerHTML = "YANDEX.RU";
+
+    </script>
+</body>
+</html>

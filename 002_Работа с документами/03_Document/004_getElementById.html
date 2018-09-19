@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getElementById</title>
+
+    <script type="text/javascript">
+
+        // событие сробатывает после полной загрузки окна.
+        window.onload = function () {
+            var paragraph = document.getElementById("output");
+            var hyperlink = document.getElementById("link");
+
+            paragraph.innerHTML = "HELLO WORLD";
+            hyperlink.innerHTML = "YANDEX.RU";
+        }
+
+    </script>
+</head>
+<body>
+    <p id="output">Hello world</p>
+    <a id="link" href="ya.ru">Yandex.ru</a>
+</body>
+</html>

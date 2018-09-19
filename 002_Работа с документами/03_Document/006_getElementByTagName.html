@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getElementByTagName</title>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+            // получение всех элементов <p>
+            var paragraph = document.getElementsByTagName("p");
+
+            for (var i = 0; i < paragraph.length; i++) {
+                // смена CSS атрибута color для всех элементов
+                paragraph[i].style.color = "red";
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <p style="color: green">Hello World!</p>
+    <p>Hello World!</p>
+    <p>Hello World!</p>
+    <p>Hello World!</p>
+    <p>Hello World!</p>
+</body>
+</html>
