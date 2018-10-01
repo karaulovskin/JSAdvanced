@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SortingDom</title>
+</head>
+<body>
+    <!--
+     Основные типы узлов
+     Интерфейс            | Константа nodeType        | Значение nodeType
+     ---------------------------------------------------------------------
+     Element              | Node.ELEMENT_NODE         | 1
+     Text                 | Node.TEXT_NODE            | 3
+     Comment              | Node.COMMENT_NODE         | 8
+     Document             | Node.DOCUMENT_NODE        | 9
+     ---------------------------------------------------------------------
+    -->
+
+    <script type="text/javascript">
+
+        function sortchildren(e) {
+            if (typeof e == "string") {
+                e = document.getElementById(e);
+            }
+
+            // Преобразовываем дочерний элемент в массив
+            var children = [];
+            for (var x = e.firstChild; x != null; x = x.nextSibling) {
+                if (x.nodeType == 1 /* Node.ELEMENT_NODE */) {
+                    children.push(x);
+                }
+            }
+
+            // Сортировка
+            children.sort(function (n, m) { // функция сравнения
+                var s = n.firstChild.data; // текст узла n
+                var t = m.firstChild.data; // текст узла m
+                if (s < t) return -1;     // n перед m
+                else if (s > t) return 1;  // n после m
+                else return 0;             // n и m равны
+            });
+
+            // Добавляем дочерние элементы обратно в родительский узел.
+            // Когда добавляется узел, который уже существует в документе, он автоматически удаляется со своего старого места.
+            // И появляется в новом месте расположения.
+            for (var i = 0; i < children.length; i++) e.appendChild(children[i]);
+        }
+
+    </script>
+
+    <ul id="list">
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+        <li>for</li>
+    </ul>
+
+    <button onclick="sortchildren('list')">Sort list</button>
+</body>
+</html>

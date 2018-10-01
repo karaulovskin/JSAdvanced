@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Работа с узлами DOM - Свойства</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        window.onload = function () {
+
+            var elem = document.getElementsByTagName('li')[2];
+
+            // nextSibling - получить следующий узел, который находится на одном уровне с текущим.
+            elem.nextSibling.style.color = "red";
+
+            // previousSibling - получить предыдущий узел, который находится на одном уровне с текущим.
+            elem.previousSibling.style.color = "green";
+
+        }
+    </script>
+
+
+    <ul id="list">
+        <li>Item 1</li><li>Item 2</li><li>Item 3</li><li>Item 4</li>
+    </ul>
+
+</body>
+</html>

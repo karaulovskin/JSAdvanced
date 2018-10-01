@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Работа с узлами DOM - Свойства</title>
+</head>
+<body>
+
+    <!--
+     Основные типы узлов
+     Интерфейс            | Константа nodeType        | Значение nodeType
+     ---------------------------------------------------------------------
+     Element              | Node.ELEMENT_NODE         | 1
+     Text                 | Node.TEXT_NODE            | 3
+     Comment              | Node.COMMENT_NODE         | 8
+     Document             | Node.DOCUMENT_NODE        | 9
+     ---------------------------------------------------------------------
+    -->
+
+    <script type="text/javascript">
+        window.onload = function () {
+
+            var elem = document.getElementById('list');
+
+            // childNodes - получение всех дочерних узлов.
+            for (i = 0; i < elem.childNodes.length; i++) {
+                elem.childNodes[i].style.color = "red";
+                alert(elem.childNodes[i].nodeType);
+            }
+        }
+    </script>
+
+
+    <ul id="list"><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>
+
+</body>
+</html>

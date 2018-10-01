@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Работа с узлами DOM - Свойства</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        window.onload = function () {
+
+            var elem = document.getElementById('list');
+
+            // firstChild - получить первый дочерний узел
+            elem.firstChild.style.color = "red";
+
+            // lastChild - получить последний дочерний узел
+            elem.lastChild.style.color = "green";
+
+        }
+    </script>
+
+
+    <ul id="list"><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>
+
+</body>
+</html>

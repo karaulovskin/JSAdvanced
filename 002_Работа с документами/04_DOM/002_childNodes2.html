@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Работа с узлами DOM - Свойства</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        window.onload = function () {
+
+            var elem = document.getElementById('list');
+
+            // childNodes - получение всех дочерних узлов.
+            for (i = 0; i < elem.childNodes.length; i++) {
+                var temp = elem.childNodes[i];
+
+                // если найденный узел не элемент то пропустить его
+                if (temp.nodeType != 1) {
+                    continue;
+                    console.log('+');
+                }
+                console.log('-');
+                elem.childNodes[i].style.color = "red";
+            }
+        }
+    </script>
+
+
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+</body>
+</html>
