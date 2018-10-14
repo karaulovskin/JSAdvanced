@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>setTimeout and clearTimeout</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+
+        var timer;
+
+        window.onload = function () {
+            timer = setTimeout(showMessage, 5000);
+
+            function showMessage() {
+                alert('Hello world');
+            }
+
+            function cansel() {
+                // отмена задержки, которая была установлена на строке 14
+                clearTimeout(timer);
+            }
+
+        }
+
+    </script>
+
+    <p>Сообщени будет отображено через 5 секунд</p>
+    <a href="javaskript:cancel()">Отмена</a>
+
+</body>
+</html>

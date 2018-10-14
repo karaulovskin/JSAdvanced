@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>setInterval()</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+            var counter = 0;
+
+            function count() {
+                counter ++;
+                document.getElementById('output').innerHTML = counter;
+            }
+
+            setInterval(count, 1000);
+        }
+
+    </script>
+
+    <p id="output"></p>
+
+</body>
+</html>

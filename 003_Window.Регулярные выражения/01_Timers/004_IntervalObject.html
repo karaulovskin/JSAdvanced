@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>setInterval and clearTimeout</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+
+        // пользовательская функция для получения элементов страницы по id
+        var get = function(id) {
+            return document.getElementById(id);
+        };
+
+        window.onload = function () {
+            var counter = 0;
+            var intervalHandler;
+
+            function count() {
+                get('output').innerHTML = counter;
+                counter++;
+            };
+
+            get('startButton').onclick = function() {
+                intervalHandler = setInterval(count, 5);
+            };
+
+            get('stopButton').onclick = function() {
+                // останавливает таймер, по которому вызывается функция count
+                clearInterval(intervalHandler);
+            };
+        }
+
+    </script>
+
+    <p id="output">-</p>
+    <input id="startButton" type="button" value="start">
+    <input id="stopButton" type="button" value="stop">
+
+</body>
+</html>
