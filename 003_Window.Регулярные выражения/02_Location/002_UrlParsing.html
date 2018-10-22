@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Анализ URL</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+
+        // Функция для чтения данных, которые ереданы при GET запросе (в адресной строке).
+        function getQuryString() {
+            var args ={};                                   // пустой объект
+
+            var query = location.search.substring(1);       // Получение строки запроса.
+            var pairs = query.split("&");                   // Разделение строки по амперсанду
+
+            console.log(query);
+            console.log(pairs);
+
+            for (var i = 0; i < pairs.length; i++) {
+                var pos = pairs[i].indexOf('=');             // Проверка пары "name=value"
+                if (pos == -1) {
+                    continue;
+                }
+
+                var argname = pairs[i].substring(0, pos);     // Получение имени
+                var value = pairs[i].substring(pos + 1);      // Получение значения
+
+                args[argname] = value;                        // Сохранение как свойства
+            }
+
+            return args;
+        }
+
+        // Для теста примера перейдите по URL текущей страницы + ?login=admin&password=123
+        function print() {
+            var args = getQuryString();
+            var e = document.createElement("p");
+
+            e.innerHTML = "Login " + args.login + "<br";
+            e.innerHTML += "Password " + args.password;
+
+            document.body.appendChild(e);
+        }
+
+    </script>
+
+    <input type="button" name="name" value="Read Query Parameters" onclick="print()">
+
+</body>
+</html>
