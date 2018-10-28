@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window open</title>
+</head>
+<body>
+
+    <script>
+        window.onload = function () {
+            document.getElementById("openButton").onclick = openButtonHandler;
+            document.getElementById("closeButton").onclick = closeButtonHandler;
+
+            var newWind;
+
+            function openButtonHandler () {
+                // Первый параметр - html страница, которая будет загружена в новом окне.
+                // Второй параметр - имя окна
+                // Третий параметр - список дополнительных параметров для IE (необязательный )
+
+                newWind = window.open("window.html", "Window Name", "width=400,height=400,status=yes,resizable=no");
+            }
+
+            function closeButtonHandler () {
+                newWind.close();
+            }
+        }
+    </script>
+
+    <input type="button" id="openButton" value="Открыть">
+    <input type="button" id="closeButton" value="Закрыть">
+
+</body>
+</html>
