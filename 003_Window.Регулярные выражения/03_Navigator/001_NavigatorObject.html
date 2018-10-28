@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Объект Navigator</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+
+        // Обоъект Navigator - поддерживает пять своиств, покоторым можно определить версию браузера.
+        // appName - Название веб браузера.
+        // appVersion - Номер версии или другая информация о браузере
+        // userAgent - строка, которую браузер посылает в HTTP заголовке USER-AGENT
+        // appCodeName - Кодовое имя браузера. Для Netscape исполызуется кодовое имя "Mozilla"
+        // platform - Аппаратная платформа, на котоой работает браузер.
+
+        var browserInfo = "Сведения  о браузере:\n";
+
+        for (var propname in navigator) {
+            browserInfo += propname + ": " + navigator[propname] + "\n";
+        }
+        alert(browserInfo);
+
+
+    </script>
+
+
+
+</body>
+</html>
