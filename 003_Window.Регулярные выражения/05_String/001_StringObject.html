@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String Object</title>
+</head>
+<body>
+
+    <script>
+        // Создание строковой переменной.
+        var a = 'my string';
+        var b = "my string";
+        var c = new String("my string");
+        var d = String("my string");
+
+        // указание юникод символов явным образом.
+        var str = "\u1234";
+        document.write(str);
+
+        document.write(" typeof объекта, созданного через значение, взятое в двойны кавычки - " + typeof  a);
+        document.write("<br>");
+        document.write(" typeof для объекта, созданного через оператор new - " + typeof c);
+    </script>
+
+</body>
+</html>

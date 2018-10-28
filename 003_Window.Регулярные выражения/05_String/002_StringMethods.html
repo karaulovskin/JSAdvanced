@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String Methods</title>
+</head>
+<body>
+
+    <script>
+        //  split - Разбивает строку на подстроки по указанному разделителю и возвращает массив подстрок.
+        var str = "Строка для тестирования примера";
+        var substrs = str.split(" ");
+        document.write(substrs.join("<br>"));
+
+        // chartAt - возврощает символ по казанной позиции.
+        var firstChar = str.charAt(0);
+        var lastChar = str.charAt(str.length - 1);
+        document.write("<br><br> первый символ - " + firstChar + "; последний символ - " + lastChar + "<br>");
+
+        // indexOf - возвращает индекс первого встречающегося в строке указанного символа.
+        str = "ab-cd-ef-gh-ij";
+        var firstDash = str.indexOf("-");
+        document.write("<br>Индекс первого символа '-' в строке " + str + " = " + firstDash + "<br>");
+
+        // lastIndexOf - возвращает индекс последнего встречающегося в строке указанного символа.
+        var lastDash = str.lastIndexOf("-");
+        document.write("<br>Индекс последнего символа '-' в строке " + str + " = " + lastDash + "<br>");
+
+        // toLowerCase() - перевод всех символов в нижний регистр
+        // toUpperCase() - перевод всех символов в верхний регистр
+        str = "Hello World!!!";
+        str = str.toLowerCase();
+        document.write("<br>toLowercase - " + str + "<br>");
+        str = str.toUpperCase();
+        document.write("<br>toUpperCase - " + str + "<br>");
+
+        // substring - возвращает строку между двумя указанными индексами, не включая индексы.
+        str = "Hello world!";
+        substring = str.substring(6, 12);
+        document.write("<br>" + substring);
+
+        // substr - возвращает строку начиная с указанного индекса, указанной длины.
+        substr = str.substr(6, 6);
+        document.write("<br>" + substr);
+
+    </script>
+
+</body>
+</html>
