@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Метод search</title>
+</head>
+<body>
+
+<script>
+    // search() - возвращает индекс первого сопоставления с регулярным выражением внутри строки. В противном случае метод вернёт -1.
+    var text = "Строка 123 для тестирования примера.";
+    var pattern= /\d\d\d/;
+    var firstIndex = text.search(pattern);
+    document.write("Подстрока найдена по индексу " + firstIndex);
+</script>
+
+</body>
+</html>
