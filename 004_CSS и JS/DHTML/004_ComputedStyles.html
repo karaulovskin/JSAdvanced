@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computed Style (Вычесляемые свойства)</title>
+</head>
+<body>
+
+    <style>
+        div {
+            width: 200px;
+            height: 200px ;
+        }
+        #first {
+            background-color: blue;
+        }
+    </style>
+
+    <script>
+
+        window.onload = function () {
+            var div1 = document.getElementById("first");
+            var div2 = document.getElementById("second");
+
+            document.getElementById("btn1").onclick = function () {
+                alert("div first: " + getStyle(div1, "backgroundColor"));
+            };
+
+            document.getElementById("btn2").onclick = function () {
+                alert("div second: " + getStyle(div2, "backgroundColor"));
+            };
+
+            // getComputedStyle - метод позволяет получить доступ к вычисляемым стилям.
+
+            function getStyle(element, styleName) {
+                if (element.currentStyle) {
+                    return element.currentStyle[styleName];
+                } else if (window.getComputedStyle) {
+                    return window.getComputedStyle(element, null)[styleName];
+                }
+            }
+        }
+
+    </script>
+
+    <div id="first"></div>
+    <div id="second" style="background-color:grey"></div>
+    <input id="btn1" type="button" value="Get first style">
+    <input id="btn2" type="button" value="Get second style">
+
+</body>
+</html>

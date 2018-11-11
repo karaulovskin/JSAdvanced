@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Использование CSS классов</title>
+</head>
+<body>
+
+    <style>
+        .class1 {
+            color: red;
+        }
+        .class2 {
+            color: blue;
+        }
+    </style>
+
+    <script>
+        var div;
+
+        window.onload = function () {
+            document.getElementById('firstClass').onclick = firstButtonHandler;
+            document.getElementById('secondClass').onclick = secondButtonHandler;
+            div = document.getElementById('div');
+        };
+
+        function firstButtonHandler () {
+            div.className = "class1";
+        }
+
+        function secondButtonHandler () {
+            div.className = "class2";
+        }
+
+    </script>
+
+    <div id="div">Текст</div>
+    <input id="firstClass" type="button" value="First class">
+    <input id="secondClass" type="button" value="Second class">
+
+</body>
+</html>

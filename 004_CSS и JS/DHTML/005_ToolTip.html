@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToolTip</title>
+</head>
+<body>
+    <style>
+        .tooltip {
+            padding: 5px;
+            font-size: 10px;
+            background-color: whitesmoke;
+            border: 1px solid black;
+            -webkit-box-shadow: 2px 2px 3px black;
+            box-shadow: 2px 2px 3px black;
+
+        }
+    </style>
+
+    <script>
+
+        function Tooltip () {
+            this.tooltip = document.createElement('div'); // Создание div для тени
+            this.tooltip.style.position = "absolute";
+            this.tooltip.style.visibility = "hidden";
+            this.tooltip.className = "tooltip";
+        };
+
+        // Установка содержимого для подсказки и отображения
+        Tooltip.prototype.show = function (text, x, y) {
+            this.tooltip.innerHTML = text;
+            this.tooltip.style.left = x + "px";
+            this.tooltip.style.top = y + "px";
+            this.tooltip.style.visibility = "visible";
+
+            // Добавление подсказки в документ если он еще не присутсвует
+            if (this.tooltip.parentNode != document.body) {
+                document.body.appendChild(this.tooltip);
+            }
+        };
+
+        // Функция для скрытия подсказки
+        Tooltip.prototype.hide = function () {
+            this.tooltip.style.visibility = "hidden";
+        };
+
+        window.onload = function () {
+            var d = document.getElementById("test");
+            d.onmousemove = mouseMoveHandler;
+            d.onmouseout = mouseOutHandler;
+        };
+
+        var t = new Tooltip();
+        
+        function mouseMoveHandler(e) {
+            if (!e) e = window.event;
+            t.show("This is tooltip!!!", e.clientX + 10, e.clientY + 10);
+        };
+
+        function mouseOutHandler() {
+            t.hide();
+        }
+
+    </script>
+
+    <p id="test">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque laboriosam maxime necessitatibus, odit placeat tenetur! Debitis fugiat nihil omnis quae repudiandae. Consequuntur dolorum ipsum iste laudantium quasi! Blanditiis dignissimos id impedit, possimus quasi ratione tempore? Dignissimos molestiae odit quo repudiandae ullam. Aperiam autem blanditiis consectetur dignissimos earum explicabo, magnam, maiores minima neque odit omnis perspiciatis placeat provident quia reiciendis rem reprehenderit sequi totam ut voluptates! Ad dolor fugit hic non optio provident ratione suscipit ullam voluptate voluptatem. Accusamus ad aspernatur atque, debitis eaque, eligendi enim, est et illo natus nisi odit optio pariatur perferendis quae quaerat qui quidem quos sit temporibus velit veritatis voluptate! Ab cupiditate deserunt error harum libero officia officiis rem unde. Alias dignissimos expedita in modi nam natus pariatur quaerat quod rerum sit? Accusantium aut dolorum eligendi facilis, libero magni perspiciatis placeat porro sit voluptatibus? Accusamus alias aliquid amet cumque dicta dolor earum facilis impedit ipsa itaque iure, laboriosam, magnam minus nam natus nostrum obcaecati optio porro praesentium quam quas quasi quibusdam quo sint sit veniam voluptas? Architecto aspernatur consectetur dolorum et illum, libero modi officiis quae voluptate! Aliquid architecto, asperiores dolores eligendi incidunt laborum non numquam possimus quaerat quibusdam quidem quo repellendus repudiandae, saepe temporibus voluptatum.
+    </p>
+
+</body>
+</html>

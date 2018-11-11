@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Анимация цвета HSL</title>
+</head>
+<body>
+
+    <script>
+
+        window.onload = function () {
+            var block = document.getElementById("block");
+
+            block.style.width = 100 + "vw";
+            block.style.height = 100 + "vh";
+
+            var color = 0;
+
+            setInterval(function () {
+                color = color + 1 % 360;
+
+                block.style.backgroundColor = "hsl(" + color + ", 100%, 50%)";
+            },50);
+
+        };
+
+    </script>
+
+    <p id="block"></p>
+
+</body>
+</html>

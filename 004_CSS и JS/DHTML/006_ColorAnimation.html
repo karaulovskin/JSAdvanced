@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Анимация цвета</title>
+</head>
+<body>
+
+    <script>
+
+        window.onload = function () {
+            var block = document.getElementById("block");
+
+            block.style.width = 100 + "vw";
+            block.style.height = 100 + "vh";
+
+            var colors = ["red", "green", "blue", "grey"];
+            var colorIndex = 0;
+
+            setInterval(function () {
+                  block.style.backgroundColor = colors[colorIndex++ % colors.length];
+            },500);
+
+        };
+
+    </script>
+
+    <p id="block"></p>
+
+</body>
+</html>

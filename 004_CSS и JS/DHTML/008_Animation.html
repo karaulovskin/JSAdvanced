@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Анимация</title>
+</head>
+<body>
+
+    <style>
+        #block {
+            position: relative;
+            background-color: aqua;
+        }
+    </style>
+
+    <script>
+
+        window.onload = function () {
+            var block = document.getElementById("block");
+
+            block.style.width = 100 + "px";
+            block.style.height = 100 + "px";
+
+            var Position = 0;
+
+            setInterval(function () {
+                block.style.left = Position + "px";
+                Position += 1;
+            },50);
+
+        };
+
+    </script>
+
+    <p id="block"></p>
+
+</body>
+</html>
