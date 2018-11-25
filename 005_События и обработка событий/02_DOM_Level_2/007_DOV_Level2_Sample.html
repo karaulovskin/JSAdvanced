@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пример использования события DOM Level 2</title>
+
+    <script>
+
+        window.addEventListener('load', function() {
+            var wrapper = document.getElementById('wrapper');
+
+            wrapper.addEventListener('click', function (e) {
+                e.target.style.backgroundColor = "grey";
+            }, true);
+
+        }, false);
+    </script>
+
+    <style>
+        #wrapper {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        #wrapper p {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            background-color: cornflowerblue;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="wrapper">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <div>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+
+</body>
+</html>

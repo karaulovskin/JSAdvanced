@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>stopPropagation</title>
+
+    <script>
+        var isTunnel = false;
+
+        window.onload = function() {
+
+            var elem1 = document.getElementById('1');
+            var elem2 = document.getElementById('2');
+            var elem3 = document.getElementById('3');
+
+            elem1.addEventListener('click', function(e) {
+                this.style.backgroundColor = 'red';
+                alert('elem1');
+                e.stopPropagation();
+            }, isTunnel);
+
+            elem2.addEventListener('click', function(e) {
+                this.style.backgroundColor = 'blue';
+                alert('elem2');
+                e.stopPropagation();
+            }, isTunnel);
+
+            elem3.addEventListener('click', function(e) {
+                this.style.backgroundColor = 'green';
+                alert('elem3');
+                e.stopPropagation();
+            }, isTunnel);
+        }
+    </script>
+
+    <style>
+        div {
+            padding: 20px;
+            border: 1px solid #ccc;
+            backgroundColor: #fff;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="1">
+        <div id="2">
+            <div id="3"></div>
+        </div>
+    </div>
+
+</body>
+</html>

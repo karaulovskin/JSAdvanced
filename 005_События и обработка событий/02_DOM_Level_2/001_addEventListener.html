@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Обработчик события DOM Level 2</title>
+
+    <script>
+        window.onload = function() {
+            var btn = document.getElementById('button');
+
+            if (btn.addEventListener) {
+                btn.addEventListener('click', function() {
+                  alert("hello")
+                }, false);
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+    <input id="button" type="button" value="button">
+
+</body>
+</html>

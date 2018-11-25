@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ключевое слово this в обработчике</title>
+
+    <script>
+        window.onload = loadHandler;
+
+        function loadHandler() {
+            var button = document.getElementById("button");
+
+            button.onclick = function () {
+                this.value = "clicked";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <input type="button" value="click me" onclick="this.value = 'clicrtd!'">
+    <input type="button" value="click me" id="button">
+
+</body>
+</html>

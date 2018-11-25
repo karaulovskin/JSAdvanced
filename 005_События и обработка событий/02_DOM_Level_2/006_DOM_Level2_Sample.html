@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пример использования события DOM Level 2</title>
+
+    <script>
+
+        window.addEventListener('click', function() {
+            var guard = document.getElementById('guard');
+
+            guard.addEventListener('keypress', function (e) {
+                if (String.fromCharCode(e.charCode) != '1' && String.fromCharCode(e.charCode) != '0') {
+                    e.preventDefault();
+                }
+            }, true);
+
+        }, false);
+    </script>
+
+</head>
+<body>
+
+    <div id="guard">
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="">
+    </div>
+
+</body>
+</html>

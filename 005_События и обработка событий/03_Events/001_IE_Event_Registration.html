@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Модель события IE</title>
+
+    <script>
+
+        window.attachEvent('onload', function() {
+            var btn = document.getElementById('btn');
+            var btnRemove = document.getElementById('btnRemove');
+
+            btn.attachEvent('onclick', handler);
+
+            btnRemove.attachEvent('onclick', function (e) {
+                btn.detachEvent('onclick', handler);
+            });
+
+            function handler () {
+                alert('Обработчик события');
+            }
+
+        });
+    </script>
+
+</head>
+<body>
+
+    <input id="btn" type="button" value="Кнопка">
+    <input id="btnRemove" type="button" value="Удалить обработчик">
+
+</body>
+</html>
