@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>События клавиатуры</title>
+
+    <style>
+        .body {
+            height: 100vh;
+        }
+    </style>
+
+    <script>
+
+        window.onload = function () {
+            var body = document.getElementsByClassName('body')[0];
+            var div = document.getElementsByClassName('output')[0];
+
+             body.onkeypress = function (e) {
+            // body.onkeydown = function (e) {
+                clear();
+                print('alt = ' + e.altKey);
+                print('ctrl = ' + e.ctrlKey);
+                print('shift = ' + e.shiftKey);
+                print('charCode = ' + e.charCode); // передается при событии keypress.
+                print('charCode = ' + String.fromCharCode(e.charCode));
+                print('keyCode = ' + e.keyCode);
+            };
+
+            function clear() {
+                div.innerHTML = '';
+            }
+
+            function print (message) {
+                div.innerHTML += message + '<br>';
+            }
+        }
+
+
+    </script>
+
+</head>
+<body class="body">
+    <div class="output"></div>
+</body>
+</html>

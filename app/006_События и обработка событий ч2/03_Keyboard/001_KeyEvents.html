@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>События клавиатуры</title>
+
+    <style>
+        .body {
+            height: 100vh;
+        }
+    </style>
+
+    <script>
+
+        window.onload = function () {
+            var body = document.getElementsByClassName('body')[0];
+            var div = document.getElementsByClassName('output')[0];
+
+            body.onkeydown = function () {
+                print('onkeydown event');
+            };
+
+            body.onkeyup = function () {
+                print('onkeyup event');
+            };
+
+            body.onkeypress = function () {
+                print('onkeypress event');
+            };
+
+            function print (message) {
+                div.innerHTML += message + '<br>';
+            }
+        }
+
+
+    </script>
+
+</head>
+<body class="body">
+    <div class="output"></div>
+</body>
+</html>

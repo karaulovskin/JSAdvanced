@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>События мыши</title>
+
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: cornflowerblue;
+        }
+    </style>
+
+    <script>
+
+        window.onload = function() {
+            var block = document.getElementsByTagName('div')[0];
+
+            block.onmouseover = function() {
+                this.style.backgroundColor = 'grey';
+            };
+
+            block.onmouseout = function() {
+                this.style.backgroundColor = 'green';
+            };
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <div></div>
+</body>
+</html>

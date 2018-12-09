@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Интерфейс Event в моделе DOM</title>
+
+    <script>
+        window.addEventListener('load', init, false);
+
+        function init() {
+            var btn = document.getElementById('button');
+            btn.addEventListener('click', handler, false);
+        }
+
+        function handler(e) {
+            // тип события
+            var message = "type = " + e.type + "\r\n";
+
+            // узел документа, в которм произошло событие, может не совпадать с currentTarget
+            message += "target = " + e.target + "\r\n";
+
+            // узел чей обработчик события работает в данный момент. На этапах перехвата и всплыти значения отличаются
+            message += "currentTarget = " + e.currentTarget + "\r\n";
+
+            // число указывающее этап. Одна из констант Event.CAPTURING_PHASE=1, Event.AT_TARGET=2, Event.BUBBLING_PHASE=3
+            message += "eventPhase = " + e.eventPhase + "\r\n";
+
+            // объект Date, указывающий, когда произошло событие.
+            message += "timeStamp = " + e.timeStamp + "\r\n";
+
+            // true если событие может всплывать по дереву элементов. События blur, focus, load, unload не всплывают.
+            message += "bubbles = " + e.bubbles + "\r\n";
+
+            // true если с этим событием связано действие по умолччанию и его можно отменить с помощью preventDefault
+            message += "cancelable = " + e.cancelable + "\r\n";
+
+            alert(message);
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <div>
+        <input id="button" type="button" name="button" value="Кнопка">
+    </div>
+</body>
+</html>

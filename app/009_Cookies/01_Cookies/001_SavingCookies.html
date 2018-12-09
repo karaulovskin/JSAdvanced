@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сохранение cookie</title>
+
+    <script>
+        function setCookie() {
+            document.cookie = 'info=123'
+        }
+
+        function getCookie() {
+            alert(document.cookie);
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <input type="button" value="Set cookies" onclick="setCookie()">
+    <input type="button" value="Get cookies" onclick="getCookie()">
+
+</body>
+</html>

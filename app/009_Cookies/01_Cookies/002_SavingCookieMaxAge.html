@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сохранение cookie</title>
+
+    <script>
+
+        function setCookie() {
+            // Следующие cookie будут хранится браузером на протяжении 1 недели (60 * 60 * 24 * 7)
+            document.cookie = 'info=123; max-age=604800';
+
+            // Существует возможность указать время жизни cookie через устаревшее свойство
+            var nextYear = new Date();
+            nextYear.setFullYear(nextYear.getFullYear() + 1);
+            document.cookie = 'name=Ivan Ivanov; expires=' + nextYear.toGMTString();
+        }
+
+        function getCookie() {
+            alert(document.cookie);
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <input id="button" type="button" value="Set cookies" onclick="setCookie()">
+    <input id="button" type="button" value="Get cookies" onclick="getCookie()">
+
+</body>
+</html>
